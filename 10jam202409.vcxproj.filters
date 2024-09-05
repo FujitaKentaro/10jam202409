@@ -1,0 +1,166 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="ソース ファイル">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="ヘッダー ファイル">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="リソース ファイル">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\GameScene">
+      <UniqueIdentifier>{28d06508-90ce-4a18-962e-a19fb3b081c5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\GameScene\manager">
+      <UniqueIdentifier>{ff5c8728-ce24-40ce-9e1f-4c2e6b382afa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\GameScene\scene">
+      <UniqueIdentifier>{0d9ae54d-5ddf-448c-8b05-576e9a6fd3bb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\user">
+      <UniqueIdentifier>{7193765d-1635-4d92-8d62-24ba775e5945}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\user\enemy">
+      <UniqueIdentifier>{48388f0c-f7fa-4d2b-8de5-fd1af8fc7696}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\user\player">
+      <UniqueIdentifier>{820a6da0-6c34-49d3-8995-b3e174231125}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\GameScene">
+      <UniqueIdentifier>{20ca34fa-ed84-46b0-9ce8-9a3c6ece9daa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\user">
+      <UniqueIdentifier>{4314b6a5-3ef6-4e0f-a631-f0c87dc63364}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\user\enemy">
+      <UniqueIdentifier>{4c0d3cc0-dfc7-4ad1-9eba-232f43b7c150}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\user\player">
+      <UniqueIdentifier>{9a8c3883-7f4f-447b-8be6-b7a8d6650dab}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\GameScene\Manager">
+      <UniqueIdentifier>{eb1e21cf-6cd1-4f2a-87d7-d0d51a3c968a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\GameScene\scene">
+      <UniqueIdentifier>{c2aff4af-327c-4098-8b0f-f3ff01c009fd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\math">
+      <UniqueIdentifier>{cb3469d3-7fa9-4aad-9824-f25d92102b5f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\math">
+      <UniqueIdentifier>{ff3618ba-bb2b-4927-abef-63e9300298e8}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="User\Circle.cpp">
+      <Filter>ソース ファイル\user</Filter>
+    </ClCompile>
+    <ClCompile Include="GameScene\Scene\Clear.cpp">
+      <Filter>ソース ファイル\GameScene\scene</Filter>
+    </ClCompile>
+    <ClCompile Include="User\Enemy\Enemy.cpp">
+      <Filter>ソース ファイル\user\enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="GameScene\GameScene.cpp">
+      <Filter>ソース ファイル\GameScene</Filter>
+    </ClCompile>
+    <ClCompile Include="GameScene\Scene\IScene.cpp">
+      <Filter>ソース ファイル\GameScene\scene</Filter>
+    </ClCompile>
+    <ClCompile Include="GameScene\Scene\MainGameScene.cpp">
+      <Filter>ソース ファイル\GameScene\scene</Filter>
+    </ClCompile>
+    <ClCompile Include="GameScene\Scene\PauseScene.cpp">
+      <Filter>ソース ファイル\GameScene\scene</Filter>
+    </ClCompile>
+    <ClCompile Include="User\Player\Player.cpp">
+      <Filter>ソース ファイル\user\player</Filter>
+    </ClCompile>
+    <ClCompile Include="GameScene\Manager\SceneFactory.cpp">
+      <Filter>ソース ファイル\GameScene\Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="GameScene\Manager\SceneManager.cpp">
+      <Filter>ソース ファイル\GameScene\Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="GameScene\Manager\SceneObjects.cpp">
+      <Filter>ソース ファイル\GameScene\Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="GameScene\Scene\SelectScene.cpp">
+      <Filter>ソース ファイル\GameScene\scene</Filter>
+    </ClCompile>
+    <ClCompile Include="GameScene\Scene\TitleScene.cpp">
+      <Filter>ソース ファイル\GameScene\scene</Filter>
+    </ClCompile>
+    <ClCompile Include="GameScene\Scene\TransitionsScene.cpp">
+      <Filter>ソース ファイル\GameScene\scene</Filter>
+    </ClCompile>
+    <ClCompile Include="math\Vec2.cpp">
+      <Filter>ソース ファイル\math</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="User\Circle.h">
+      <Filter>ヘッダー ファイル\user</Filter>
+    </ClInclude>
+    <ClInclude Include="GameScene\Scene\Clear.h">
+      <Filter>ヘッダー ファイル\GameScene\scene</Filter>
+    </ClInclude>
+    <ClInclude Include="User\Enemy\Enemy.h">
+      <Filter>ヘッダー ファイル\user\enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="GameScene\GameScene.h">
+      <Filter>ヘッダー ファイル\GameScene</Filter>
+    </ClInclude>
+    <ClInclude Include="GameScene\Scene\IScene.h">
+      <Filter>ヘッダー ファイル\GameScene\scene</Filter>
+    </ClInclude>
+    <ClInclude Include="GameScene\Manager\ISceneFactory.h">
+      <Filter>ヘッダー ファイル\GameScene\manager</Filter>
+    </ClInclude>
+    <ClInclude Include="GameScene\Scene\MainGameScene.h">
+      <Filter>ヘッダー ファイル\GameScene\scene</Filter>
+    </ClInclude>
+    <ClInclude Include="GameScene\Scene\PauseScene.h">
+      <Filter>ヘッダー ファイル\GameScene\scene</Filter>
+    </ClInclude>
+    <ClInclude Include="User\Player\Player.h">
+      <Filter>ヘッダー ファイル\user\player</Filter>
+    </ClInclude>
+    <ClInclude Include="GameScene\Manager\SceneFactory.h">
+      <Filter>ヘッダー ファイル\GameScene\manager</Filter>
+    </ClInclude>
+    <ClInclude Include="GameScene\Manager\SceneIntegrate.h">
+      <Filter>ヘッダー ファイル\GameScene\manager</Filter>
+    </ClInclude>
+    <ClInclude Include="GameScene\Manager\SceneManager.h">
+      <Filter>ヘッダー ファイル\GameScene\manager</Filter>
+    </ClInclude>
+    <ClInclude Include="GameScene\Manager\SceneObjects.h">
+      <Filter>ヘッダー ファイル\GameScene\manager</Filter>
+    </ClInclude>
+    <ClInclude Include="GameScene\Scene\SelectScene.h">
+      <Filter>ヘッダー ファイル\GameScene\scene</Filter>
+    </ClInclude>
+    <ClInclude Include="GameScene\Scene\TitleScene.h">
+      <Filter>ヘッダー ファイル\GameScene\scene</Filter>
+    </ClInclude>
+    <ClInclude Include="GameScene\Scene\TransitionsScene.h">
+      <Filter>ヘッダー ファイル\GameScene\scene</Filter>
+    </ClInclude>
+    <ClInclude Include="math\Vec2.h">
+      <Filter>ヘッダー ファイル\math</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include=".editorconfig" />
+    <None Include=".gitignore" />
+  </ItemGroup>
+</Project>
