@@ -13,21 +13,26 @@ Enemy::~Enemy()
 void Enemy::Initialize()
 {
 	pos.x = RandomFloat();
-	pos.y = 20, radius = 30;
+	pos.y = 20;
+	radius = 0;
 	accel = 0;
-	speed = 2;
+	speed = 5;
 	isDead = false;
+	isfall = false;
 }
 
 void Enemy::Update(bool isStart)
 {
-	if (isStart) {
-		accel += 0.1f;
-
-		pos.y += speed + accel;
+	if (isStart) {}
+	if (isfall) {
+		accel += 0.01f;
+		pos.y += speed*accel;
 	}
 	else {
-
+		radius++;
+	}
+	if (radius >= 25) {
+		isfall = true;
 	}
 	if (pos.y >= 700) {
 		isDead = true;
@@ -36,7 +41,7 @@ void Enemy::Update(bool isStart)
 
 void Enemy::Draw()
 {
-	DrawCircle(pos.x, pos.y, 20, GetColor(100, 200, 100), true);
+	DrawCircle(pos.x, pos.y, radius, GetColor(100, 200, 100), true);
 }
 
 float Enemy::RandomFloat() {

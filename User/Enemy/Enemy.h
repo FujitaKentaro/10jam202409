@@ -18,7 +18,7 @@ public:
 	int GetRadius() { return radius; };
 	bool isDead;
 private:
-
+	bool isfall;
 	Vec2 pos;
 	int radius;
 	float speed;
