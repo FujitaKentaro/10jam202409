@@ -143,6 +143,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="GameScene\Particle\ParticleManager.cpp" />
     <ClCompile Include="User\Circle.cpp" />
     <ClCompile Include="GameScene\GameScene.cpp" />
     <ClCompile Include="GameScene\Manager\SceneFactory.cpp" />
@@ -161,6 +162,7 @@
     <ClCompile Include="User\Player\Player.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="GameScene\Particle\ParticleManager.h" />
     <ClInclude Include="User\Circle.h" />
     <ClInclude Include="GameScene\GameScene.h" />
     <ClInclude Include="GameScene\Manager\ISceneFactory.h" />
