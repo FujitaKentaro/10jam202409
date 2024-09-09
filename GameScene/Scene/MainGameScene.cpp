@@ -13,6 +13,8 @@ MainGameScene::~MainGameScene() {
 }
 
 void MainGameScene::Initialize() {
+	player= std::make_unique<Player>();
+	player->Initialize();
 	timer = 0;
 	isGameStart = false;
 	isGameEnd = false;
@@ -56,6 +58,7 @@ void MainGameScene::Update() {
 	if (isGameStart == false && isGameEnd == true) {
 		_manager->SetSceneNum(SCE_CLEAR);
 	}
+	player->Update();
 }
 
 void MainGameScene::Draw() {
@@ -76,6 +79,6 @@ void MainGameScene::Draw() {
 		DrawFormatString(30, 30, GetColor(255, 255, 255), "PUSH  A D  MOVE");
 	}
 	DrawFormatString(30, 60, GetColor(255, 255, 255), "SCORE : %d", _objects->player->GetScore());
-
+	player->Draw();
 
 }
