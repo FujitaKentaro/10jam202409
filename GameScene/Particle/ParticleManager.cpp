@@ -18,7 +18,7 @@ void ParticleManager::Draw() {
 	}
 }
 
-void ParticleManager::SetAnyExp(const Vec2& pos, Vec2 velocityMinMax, size_t volume, float scale, unsigned int color) {
+void ParticleManager::SetAnyExp(const Vec2& pos, Vec2 velocityMinMax, size_t volume, int lifetime, float scale, unsigned int color) {
 	std::unique_ptr<Particle> newParticle;
 	float min, max;
 	min = velocityMinMax.x;
@@ -26,10 +26,11 @@ void ParticleManager::SetAnyExp(const Vec2& pos, Vec2 velocityMinMax, size_t vol
 	for (size_t i = 0; i < volume; i++) {
 		// 生成
 		newParticle.reset(Particle::Create(
-			pos, { RandomFloat(0,min, max),
+			pos, {
+				RandomFloat(0,min, max),
 				RandomFloat(0,min, max) },
-			scale, color
-		));
+				lifetime, scale, color
+				));
 		// 出力
 		Particles_.push_back(std::move(newParticle));
 	}
@@ -47,7 +48,9 @@ void ParticleManager::SetAnyExp(ParticlePreset preset)
 			preset.pos_, {
 				RandomFloat(0,min, max),
 				RandomFloat(0,min, max) },
-				preset.scale, preset.color
+				preset.lifeTime,
+				preset.scale,
+				preset.color
 				));
 		// 出力
 		Particles_.push_back(std::move(newParticle));
@@ -63,7 +66,7 @@ ParticleManager* ParticleManager::GetInstance() {
 
 
 Particle* Particle::Create(
-	const Vec2& pos_, const Vec2& velocity_, float scale, unsigned int color) {
+	const Vec2& pos_, const Vec2& velocity_, int lifetime, float scale, unsigned int color) {
 	// インスタンス
 	Particle* instance = new Particle();
 	if (instance == nullptr) {
@@ -71,17 +74,18 @@ Particle* Particle::Create(
 	}
 
 	// 初期化
-	instance->Init(pos_, velocity_, scale, color);
+	instance->Init(pos_, velocity_,lifetime, scale, color);
 
 	return instance;
 }
 
 void Particle::Init(
-	const Vec2& pos, const Vec2& velocity, float scale, unsigned int color) {
+	const Vec2& pos, const Vec2& velocity, int lifetime, float scale, unsigned int color) {
 	pos_ = pos;
-	color_ = color;
-	scale_ = scale;
 	velocity_ = velocity;
+	MAXLIFETIME = lifetime;
+	scale_ = scale;
+	color_ = color;
 
 	lifeTimer = 0;
 
@@ -105,4 +109,6 @@ void Particle::Update() {
 	}
 }
 
-void Particle::Draw() { DrawBoxAA(pos_.x - scale_, pos_.y - scale_, pos_.x + scale_, pos_.y + scale_, color_, true); }
+void Particle::Draw() {
+	DrawBoxAA(pos_.x - scale_, pos_.y - scale_, pos_.x + scale_, pos_.y + scale_, color_, true);
+}

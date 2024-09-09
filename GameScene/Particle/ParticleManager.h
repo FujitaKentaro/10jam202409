@@ -11,7 +11,7 @@ public:
 	/// 作成
 	/// </summary>
 	/// <returns></returns>
-	static Particle* Create(const Vec2& pos, const Vec2& velocity, float scale = 1.0f, unsigned int color = GetColor(255, 255, 255));
+	static Particle* Create(const Vec2& pos, const Vec2& velocity,int lifetime = 30, float scale = 1.0f, unsigned int color = GetColor(255, 255, 255));
 
 	/// <summary>
 	/// 初期化
@@ -19,7 +19,7 @@ public:
 	/// <param name="pos_"></param>
 	/// <param name="model_"></param>
 	/// <param name="pipeline_"></param>
-	void Init(const Vec2& pos, const Vec2& velocity, float scale, unsigned int color = GetColor(255, 255, 255));
+	void Init(const Vec2& pos, const Vec2& velocity, int lifetime, float scale, unsigned int color = GetColor(255, 255, 255));
 
 	/// <summary>
 	/// 更新
@@ -49,8 +49,8 @@ private:
 	unsigned int color_;
 
 	// 生存時間
-	uint32_t lifeTimer = 0;
-	const uint32_t MAXLIFETIME = 30;
+	uint32_t lifeTimer;
+	uint32_t MAXLIFETIME ;
 
 	float easeTimer = 0;
 	const float MAXEASETIME = 20;
@@ -73,6 +73,7 @@ public:
 		Vec2 velocityMinMax = { -1.0,1.0 };
 		// 一回で出す量
 		size_t volume = 10;
+		int lifeTime = 30;
 		// オブジェクトスケール
 		float scale = 1.0f;
 		// オブジェクトカラー
@@ -104,7 +105,7 @@ public:
 	/// <param name="volume">一回で出す量</param>
 	/// <param name="scale">オブジェクトスケール</param>
 	/// <param name="color">オブジェクトカラー</param>
-	void SetAnyExp(const Vec2& pos, Vec2 velocityMinMax = { -1.0,1.0 }, size_t volume = 10, float scale = 1.0f, unsigned int color = GetColor(255, 255, 255));
+	void SetAnyExp(const Vec2& pos, Vec2 velocityMinMax = { -1.0,1.0 }, size_t volume = 10,int lifetime = 30, float scale = 1.0f, unsigned int color = GetColor(255, 255, 255));
 	/// <param name="ParticlePreset">プリセット</param>
 	void SetAnyExp(ParticlePreset preset);
 
