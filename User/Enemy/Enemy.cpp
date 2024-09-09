@@ -12,31 +12,52 @@ Enemy::~Enemy()
 
 void Enemy::Initialize()
 {
-	pos.x = RandomFloat();
-	pos.y = 20, radius = 30;
+	pos.x = RandomFloat(0,200,1080);
+	pos.y = 20;
+	radius = 0;
 	accel = 0;
-	speed = 2;
+	speed = 5;
 	isDead = false;
+	isfall = false;
+	isHit = false;
 }
 
 void Enemy::Update(bool isStart)
 {
-	if (isStart) {
-		accel += 0.1f;
+	float posres;
+	posres = pos.y;
+	if (isStart) {}
 
-		pos.y += speed + accel;
+	if (isfall) {
+		accel += 0.005f;
+		posres += speed * accel;
 	}
 	else {
-
+		radius++;
 	}
-	if (pos.y >= 700) {
+
+	if (radius >= 25) {
+		isfall = true;
+	}
+	if (pos.y >= 650) {
 		isDead = true;
 	}
+	if (isHit) {
+		color = GetColor(100, 0, 0);
+		accel -= 0.25;
+		posres += speed * accel;
+		radius--;
+	}
+	else {
+		color = GetColor(100, 200, 100);
+	}
+	 pos.y = posres;
 }
+
 
 void Enemy::Draw()
 {
-	DrawCircle(pos.x, pos.y, 20, GetColor(100, 200, 100), true);
+	DrawCircle((int)pos.x, (int)pos.y, radius, color, true);
 }
 
 float Enemy::RandomFloat() {
@@ -101,10 +122,24 @@ void EnemyManager::ColiderUpdate(Circle* circle)
 			pow(enemys->GetPos().y - circle->GetPos().y, 2)
 			));
 
-		if (dist < circle->GetRadius() + enemys->GetRadius())
+		if (dist < circle->GetRadius() + enemys->GetRadius() && enemys->isHit == false)
 		{
 			circle->Hit();
-			enemys->isDead = true;
+			enemys->isHit = true;
 		}
 	}
+}
+
+float  Enemy::RandomFloat(float offset, float min, float max)
+{
+	//乱数生成装置(メルセンヌ・ツイスタ)
+	std::random_device seed_gen;
+	std::mt19937_64 engine(seed_gen());
+
+	//乱数
+	std::uniform_real_distribution<float>dist(offset + min, offset + max);
+	float result;
+	result = dist(engine);
+
+	return result;
 }

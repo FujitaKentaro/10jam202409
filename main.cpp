@@ -47,6 +47,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,LPSTR lpCmdLine,
 
 	std::unique_ptr<GameScene> gameScene;
 	gameScene = std::make_unique<GameScene>();
+	gameScene->SetWindowSize(Vec2(WIN_WIDTH, WIN_HEIGHT));
 	gameScene->Initialize();
 
 	// 最新のキーボード情報用
