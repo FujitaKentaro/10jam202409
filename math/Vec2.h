@@ -1,5 +1,6 @@
 
 #pragma once
+#include <random>
 class Vec2
 {
 public:
@@ -39,3 +40,4 @@ const Vec2 operator*(float s, const Vec2& v);
 const Vec2 operator/(const Vec2& v, float s);
 // 補間
 float lerpFloat(const float start, const float end, const float t);
+float RandomFloat(float offset = 0, float min = -10, float max = 10);

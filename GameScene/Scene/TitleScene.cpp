@@ -21,8 +21,8 @@ void TitleScene::Update() {
 }
 
 void TitleScene::Draw() {
-	DrawFormatString(200, 60, GetColor(255, 255, 255), "TITLE");
-	DrawFormatString(200, 90, GetColor(255, 255, 255), "PRESS ENTER");
+	DrawFormatString(200, 60, GetColor(255, 255, 255), L"TITLE");
+	DrawFormatString(200, 90, GetColor(255, 255, 255), L"PRESS ENTER");
 }
 
 

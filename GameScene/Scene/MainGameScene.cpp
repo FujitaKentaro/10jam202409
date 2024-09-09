@@ -60,7 +60,7 @@ void MainGameScene::Update() {
 
 void MainGameScene::Draw() {
 
-	DrawFormatString(200, 60, GetColor(255, 255, 255), "game");
+	DrawFormatString(200, 60, GetColor(255, 255, 255), L"game");
 
 	DrawCircle(mousePos.x, mousePos.y, 5, GetColor(255, 0, 255), true);
 
@@ -70,12 +70,12 @@ void MainGameScene::Draw() {
 	_objects->enemyManager->Draw();
 
 	if (isGameStart == false) {
-		DrawFormatString(30, 30, GetColor(255, 255, 255), "PRESS ENTER START");
+		DrawFormatString(30, 30, GetColor(255, 255, 255), L"PRESS ENTER START");
 	}
 	if (isGameStart == true && isGameEnd == false) {
-		DrawFormatString(30, 30, GetColor(255, 255, 255), "PUSH  A D  MOVE");
+		DrawFormatString(30, 30, GetColor(255, 255, 255), L"PUSH  A D  MOVE");
 	}
-	DrawFormatString(30, 60, GetColor(255, 255, 255), "SCORE : %d", _objects->player->GetScore());
+	DrawFormatString(30, 60, GetColor(255, 255, 255), L"SCORE : %d", _objects->player->GetScore());
 
 
 }
