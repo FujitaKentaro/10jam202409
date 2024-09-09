@@ -13,8 +13,6 @@ public:
 	void Initialize();
 	void Update(bool isStart);
 	void Draw();
-	float RandomFloat();
-	float RandomFloat(float offset = 0, float min = -10, float max = 10);
 	Vec2 GetPos() { return pos; };
 	int GetRadius() { return radius; };
 	bool isHit;

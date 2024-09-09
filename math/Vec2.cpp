@@ -125,3 +125,17 @@ const Vec2 operator/(const Vec2& v, float s)
 float lerpFloat(const float start, const float end, const float t) {
 	return start * (1.0f - t) + end * t;
 }
+
+float  RandomFloat(float offset, float min, float max)
+{
+	//乱数生成装置(メルセンヌ・ツイスタ)
+	std::random_device seed_gen;
+	std::mt19937_64 engine(seed_gen());
+
+	//乱数
+	std::uniform_real_distribution<float>dist(offset + min, offset + max);
+	float result;
+	result = dist(engine);
+
+	return result;
+}

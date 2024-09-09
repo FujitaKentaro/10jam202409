@@ -60,19 +60,6 @@ void Enemy::Draw()
 	DrawCircle((int)pos.x, (int)pos.y, radius, color, true);
 }
 
-float Enemy::RandomFloat() {
-	//乱数生成装置(メルセンヌ・ツイスタ)
-	std::random_device seed_gen;
-	std::mt19937_64 engine(seed_gen());
-
-	//乱数
-	std::uniform_real_distribution<float>dist(200, 1080);
-	float result;
-	result = dist(engine);
-
-	return result;
-}
-
 void EnemyManager::Initialize()
 {
 
@@ -128,18 +115,4 @@ void EnemyManager::ColiderUpdate(Circle* circle)
 			enemys->isHit = true;
 		}
 	}
-}
-
-float  Enemy::RandomFloat(float offset, float min, float max)
-{
-	//乱数生成装置(メルセンヌ・ツイスタ)
-	std::random_device seed_gen;
-	std::mt19937_64 engine(seed_gen());
-
-	//乱数
-	std::uniform_real_distribution<float>dist(offset + min, offset + max);
-	float result;
-	result = dist(engine);
-
-	return result;
 }

@@ -9,6 +9,7 @@
 
 #include "Circle.h"
 #include "Enemy.h"
+#include "Particle/ParticleManager.h"
 
 typedef struct Shake {
 	uint32_t isShake;

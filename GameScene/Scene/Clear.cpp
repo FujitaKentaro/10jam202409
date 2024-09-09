@@ -26,11 +26,13 @@ void Clear::Update() {
 		scoretimer++;
 	}
 
-	previewScore = lerpFloat(0, _objects->player->GetScore(), (float)scoretimer/(float)SCORE_MAX_TIME);
+	previewScore = lerpFloat(0, _objects->player->GetScore(), (float)scoretimer / (float)SCORE_MAX_TIME);
+
+	ParticleManager::GetInstance()->SetAnyExp(Vec2(100, 100), Vec2(-1, 1), 1, 10, GetColor((int)RandomFloat(128, 0, 128), (int)RandomFloat(128, 0, 128), (int)RandomFloat(128, 0, 128)));
 }
 
 void Clear::Draw() {
-	DrawFormatString(200, 60, GetColor(255, 255, 255), "clear");
-	DrawFormatString(200, 90, GetColor(255, 255, 255), "PRESS SPACE TO TITLE");
-	DrawFormatString((_objects->GetWindowSize().x/2)-100, _objects->GetWindowSize().y/2, GetColor(255, 255, 255), "SCORE : %d", previewScore);
+	DrawFormatString(200, 60, GetColor(255, 255, 255), L"clear");
+	DrawFormatString(200, 90, GetColor(255, 255, 255), L"PRESS SPACE TO TITLE");
+	DrawFormatString((_objects->GetWindowSize().x / 2) - 100, _objects->GetWindowSize().y / 2, GetColor(255, 255, 255), L"SCORE : %d", previewScore);
 }

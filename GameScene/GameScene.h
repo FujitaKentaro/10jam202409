@@ -6,6 +6,7 @@
 #include "Enemy.h"
 #include "SceneIntegrate.h"
 #include "SceneFactory.h"
+#include "Particle/ParticleManager.h"
 
 class GameScene
 {
@@ -24,6 +25,7 @@ private:
 	// mane-ja-
 	SceneManager* sceneManager = nullptr;
 	SceneFactory* sceneFactory = nullptr;
+	ParticleManager* particleManager = nullptr;
 
 	std::unique_ptr<SceneObjects> sceneObjects;
 

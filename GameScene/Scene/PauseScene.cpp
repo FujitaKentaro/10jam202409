@@ -26,5 +26,5 @@ void PauseScene::Draw() {
 
 	//ここより下にポーズシーン用の描画処理
 
-	DrawFormatString(200, 60, GetColor(255, 255, 255), "pause");
+	DrawFormatString(200, 60, GetColor(255, 255, 255), L"pause");
 }

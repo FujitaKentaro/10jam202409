@@ -23,8 +23,8 @@ void SelectScene::Update() {
 }
 
 void SelectScene::Draw() {
-	DrawFormatString(200, 60, GetColor(255, 255, 255),"serect");
-	DrawFormatString(200, 90, GetColor(255, 255, 255), "PRESS SPACE");
+	DrawFormatString(200, 60, GetColor(255, 255, 255),L"serect");
+	DrawFormatString(200, 90, GetColor(255, 255, 255), L"PRESS SPACE");
 }
 
 void SelectScene::SelectSceneNum() {
