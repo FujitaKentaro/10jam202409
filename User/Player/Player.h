@@ -1,6 +1,7 @@
 #pragma once
 #include "Vec2.h"
 #include <DxLib.h>
+
 class Player
 {
 public:
@@ -23,10 +24,11 @@ private:
 	Vec2 bulletPos = { 0,0 };
 	Vec2 bulletResetPos = { 0,0 };
 	//弾の方向
-
 	Vec2 bulletDir;
-	int bulletRadius = 5;
+	int bulletRadius = 10;
 	bool releaseMouse = false;
+	//重力
+	float gravity = 9.8f;
 
 	//スピード(仮)
 	float bulletSpeed = 3.0f;
