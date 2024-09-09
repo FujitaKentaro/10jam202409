@@ -32,5 +32,5 @@ void Clear::Update() {
 void Clear::Draw() {
 	DrawFormatString(200, 60, GetColor(255, 255, 255), "clear");
 	DrawFormatString(200, 90, GetColor(255, 255, 255), "PRESS SPACE TO TITLE");
-	DrawFormatString(30, 60, GetColor(255, 255, 255), "SCORE : %d", previewScore);
+	DrawFormatString((_objects->GetWindowSize().x/2)-100, _objects->GetWindowSize().y/2, GetColor(255, 255, 255), "SCORE : %d", previewScore);
 }

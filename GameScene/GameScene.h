@@ -17,7 +17,9 @@ public:
 	void Draw();
 	void DrawUI();
 	void AllClear();
-
+	void SetWindowSize(const Vec2 windowSize) { GameScene::WINDOW_SIZE = windowSize; }
+public:
+	Vec2 WINDOW_SIZE;
 private:
 	// mane-ja-
 	SceneManager* sceneManager = nullptr;
@@ -27,7 +29,7 @@ private:
 
 private:
 
-	
+
 
 };
 

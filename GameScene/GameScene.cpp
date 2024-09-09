@@ -11,6 +11,7 @@ void GameScene::Initialize()
 {
 	// シーン管理
 	sceneObjects = std::make_unique<SceneObjects>();
+	sceneObjects->SetWindowSize(WINDOW_SIZE);
 	sceneObjects->Initialize();
 	IScene::SetSceneObjects(sceneObjects.get());
 	sceneFactory = new SceneFactory();
@@ -30,7 +31,7 @@ void GameScene::Update()
 
 	sceneManager->SceneUpdate();
 
-	
+
 }
 
 void GameScene::Draw()
