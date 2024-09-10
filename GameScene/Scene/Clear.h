@@ -35,6 +35,12 @@ public:
 
 private:
 
+	const int SCORE_MAX_TIME = 100;
+	int scoretimer = 0;
+	int previewScore;
+
+	bool isExp = false;
+
 public:
 	//代入演算子削除
 	Clear& operator=(const Clear&) = delete;

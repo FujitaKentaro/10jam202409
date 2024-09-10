@@ -9,8 +9,12 @@ GameScene::~GameScene()
 
 void GameScene::Initialize()
 {
+	particleManager = ParticleManager::GetInstance();
+	particleManager->Init();
+
 	// シーン管理
 	sceneObjects = std::make_unique<SceneObjects>();
+	sceneObjects->SetWindowSize(WINDOW_SIZE);
 	sceneObjects->Initialize();
 	IScene::SetSceneObjects(sceneObjects.get());
 	sceneFactory = new SceneFactory();
@@ -28,9 +32,9 @@ void GameScene::Update()
 
 	sceneObjects->UpdateImGui();
 
-	sceneManager->SceneUpdate();
+	particleManager->Update();
 
-	
+	sceneManager->SceneUpdate();
 }
 
 void GameScene::Draw()
@@ -46,6 +50,7 @@ void GameScene::DrawUI()
 
 void GameScene::AllClear()
 {
-	//enemyManager->AllClear();
+	delete sceneFactory;
+	delete sceneManager;
 }
 

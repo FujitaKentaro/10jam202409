@@ -13,14 +13,15 @@ public:
 	void Initialize();
 	void Update(bool isStart);
 	void Draw();
-	float RandomFloat();
 	Vec2 GetPos() { return pos; };
 	int GetRadius() { return radius; };
+	bool isHit;
 	bool isDead;
 private:
-
+	bool isfall;
 	Vec2 pos;
 	int radius;
+	unsigned int color;
 	float speed;
 	float accel;
 
@@ -37,3 +38,4 @@ public:
 	void AllClear();
 	void ColiderUpdate(Circle* circle);
 };
+

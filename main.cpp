@@ -15,6 +15,9 @@ const int WIN_HEIGHT = 720;
 //int WINAPI WinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance, _In_ LPSTR lpCmdLine, _In_ int nCmdShow)
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,LPSTR lpCmdLine, int nCmdShow)
 {
+	// 使用する文字コードを utf8 に設定
+	SetUseCharCodeFormat(DX_CHARCODEFORMAT_UTF8);
+
 	// ウィンドウモードに設定
 	ChangeWindowMode(TRUE);
 
@@ -23,7 +26,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,LPSTR lpCmdLine,
 	SetWindowSizeChangeEnableFlag(FALSE, FALSE);
 
 	// タイトルを変更
-	SetMainWindowText("TITLE");
+	SetMainWindowText(L"TITLE");
 
 	// 画面サイズの最大サイズ、カラービット数を設定(モニターの解像度に合わせる)
 	SetGraphMode(WIN_WIDTH, WIN_HEIGHT, 32);
@@ -47,6 +50,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,LPSTR lpCmdLine,
 
 	std::unique_ptr<GameScene> gameScene;
 	gameScene = std::make_unique<GameScene>();
+	gameScene->SetWindowSize(Vec2(WIN_WIDTH, WIN_HEIGHT));
 	gameScene->Initialize();
 
 	// 最新のキーボード情報用

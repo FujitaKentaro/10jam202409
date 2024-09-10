@@ -9,6 +9,7 @@
 
 #include "Circle.h"
 #include "Enemy.h"
+#include "Particle/ParticleManager.h"
 
 typedef struct Shake {
 	uint32_t isShake;
@@ -23,7 +24,7 @@ typedef struct Shake {
 class SceneObjects
 {
 private:
-	
+
 public:
 	SceneObjects();
 	~SceneObjects();
@@ -32,7 +33,8 @@ public:
 	void Initialize();
 	void Reset();
 	void UpdateImGui();
-
+	void SetWindowSize(Vec2 winsize) { windowSize = winsize; }
+	Vec2 GetWindowSize() {return windowSize; }
 public: // 演出用
 
 	void BannerDraw();
@@ -44,14 +46,14 @@ public: // 演出用
 	void SlowEffectDraw();
 
 private: // 演出用
-	
+
 public:
-	
+
 public: // UI用
 	void UIUpdate();
 	void UIDraw();
 
-	
+
 
 public:
 	class LevelData;
@@ -59,7 +61,7 @@ public:
 	void SetingLevel(LevelData* data);
 
 private: // UI用
-	
+	Vec2 windowSize;
 
 public: // オブジェクトの管理
 
@@ -67,6 +69,6 @@ public: // オブジェクトの管理
 	std::unique_ptr<Circle> player;
 
 private: // ライト用
-	
+
 };
 
