@@ -6,6 +6,7 @@
  */
 #include "IScene.h"
 #include "SceneIntegrate.h"
+#include "Player.h"
 
 class MainGameScene :
 	public IScene
@@ -41,5 +42,8 @@ private:
 
 	bool isGameStart = false;
 	bool isGameEnd;
+
+	//プレイヤー
+	std::unique_ptr<Player> player;
 };
 

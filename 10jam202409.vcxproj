@@ -160,6 +160,7 @@
     <ClCompile Include="math\Vec2.cpp" />
     <ClCompile Include="User\Enemy\Enemy.cpp" />
     <ClCompile Include="User\Player\Player.cpp" />
+    <ClCompile Include="User\Player\PlayerBullet.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameScene\Particle\ParticleManager.h" />
@@ -180,6 +181,7 @@
     <ClInclude Include="math\Vec2.h" />
     <ClInclude Include="User\Enemy\Enemy.h" />
     <ClInclude Include="User\Player\Player.h" />
+    <ClInclude Include="User\Player\PlayerBullet.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include=".editorconfig" />
