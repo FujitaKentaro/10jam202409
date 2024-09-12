@@ -26,13 +26,13 @@ void Clear::Update() {
 		scoretimer++;
 	}
 
-	previewScore = lerpFloat(0, _objects->player->GetScore(), (float)scoretimer / (float)SCORE_MAX_TIME);
+	previewScore = lerpFloat(0, _objects->flower->Life2Score().y, (float)scoretimer / (float)SCORE_MAX_TIME);
 
 	if (isExp == false) {
 		isExp = true;
 		ParticleManager::GetInstance()->SetAnyExp(
 			Vec2(_objects->GetWindowSize().x / 2, _objects->GetWindowSize().y / 2),Vec2(-10, 10),
-			_objects->player->GetScore(), 100, 10,
+			_objects->flower->Life2Score().y, 100, 10,
 			GetColor(
 				(int)RandomFloat(128, 0, 128),
 				(int)RandomFloat(128, 0, 128),
