@@ -16,7 +16,7 @@ void Clear::Initialize() {
 }
 
 void Clear::Update() {
-	if (CheckHitKey(KEY_INPUT_SPACE)) {
+	if ((GetMouseInput() & MOUSE_INPUT_RIGHT) != 0) {
 		_manager->SetSceneNum(SCE_TITLE);
 	}
 	if (scoretimer >= SCORE_MAX_TIME) {
@@ -48,6 +48,6 @@ void Clear::Draw() {
 	ParticleManager::GetInstance()->Draw();
 
 	DrawFormatString(200, 60, GetColor(255, 255, 255), L"clear");
-	DrawFormatString(200, 90, GetColor(255, 255, 255), L"PRESS SPACE TO TITLE");
+	DrawFormatString(200, 90, GetColor(255, 255, 255), L"CLICK MOUSE RIGHT TO TITLE");
 	DrawFormatString((_objects->GetWindowSize().x / 2) - 100, _objects->GetWindowSize().y / 2, GetColor(255, 255, 255), L"SCORE : %d", previewScore);
 }

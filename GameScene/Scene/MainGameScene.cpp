@@ -29,7 +29,7 @@ void MainGameScene::Update() {
 	mousePos.x = (float)x;
 	mousePos.y = (float)y;
 	if (isGameStart == false) {
-		if (CheckHitKey(KEY_INPUT_RETURN)) {
+		if ((GetMouseInput() & MOUSE_INPUT_RIGHT) != 0) {
 			isGameStart = true;
 			_objects->circle->Initialize(Vec2(600, 600), 20);
 		}
@@ -76,7 +76,7 @@ void MainGameScene::Draw() {
 	_objects->enemyManager->Draw();
 
 	if (isGameStart == false) {
-		DrawFormatString(30, 30, GetColor(255, 255, 255), L"PRESS ENTER START");
+		DrawFormatString(30, 30, GetColor(255, 255, 255), L"CLICK MOUSE RIGHT START");
 	}
 	if (isGameStart == true && isGameEnd == false) {
 		DrawFormatString(30, 30, GetColor(255, 255, 255), L"PUSH  A D  MOVE");
