@@ -141,9 +141,6 @@ bool EnemyManager::ColiderUpdate(Vec2 pos, float radius)
 			enemys->isHit = true;
 			return true;
 		}
-		else {
-			return false;
-		}
 	}
 	return false;
 }
