@@ -14,7 +14,7 @@ Enemy::~Enemy()
 
 void Enemy::Initialize()
 {
-	pos.x = RandomFloat(0, 200, 1080);
+	pos.x = RandomFloat(0, 50, 600);
 	pos.y = 20;
 	radius = 0;
 	accel = 0;
@@ -64,9 +64,10 @@ void Enemy::Update(bool isStart)
 }
 
 
-void Enemy::Draw()
+void Enemy::Draw(int graphHandle)
 {
-	DrawCircle((int)pos.x, (int)pos.y, radius, color, true);
+	//DrawCircle((int)pos.x, (int)pos.y, radius, color, true);
+	DrawGraph((int)pos.x - radius, (int)pos.y - radius, graphHandle, true);
 }
 
 void EnemyManager::Initialize()
@@ -91,7 +92,7 @@ void EnemyManager::Draw()
 {
 	for (std::unique_ptr<Enemy>& enemys : enemy)
 	{
-		enemys->Draw();
+		enemys->Draw(eneGraph);
 	}
 }
 
@@ -130,7 +131,6 @@ bool EnemyManager::ColiderUpdate(Vec2 pos, float radius)
 {
 	for (std::unique_ptr<Enemy>& enemys : enemy)
 	{
-		enemys->Draw();
 		float dist = sqrtf(float(
 			pow(enemys->GetPos().x - pos.x, 2) +
 			pow(enemys->GetPos().y - pos.y, 2)

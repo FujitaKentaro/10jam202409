@@ -70,6 +70,12 @@ public: // オブジェクトの管理
 	std::unique_ptr<Circle> circle;
 	std::unique_ptr<Flower> flower;
 
+public:
+	int enemyGraph;
+	int flowerGraph[4];
+	int wallGraph;
+
+
 private: // ライト用
 
 };

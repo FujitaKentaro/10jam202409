@@ -65,6 +65,9 @@ void MainGameScene::Update() {
 	if (isGameStart == false && isGameEnd == true) {
 		_manager->SetSceneNum(SCE_CLEAR);
 	}
+	if (_objects->flower->Life2Score().x <=0) {
+		_manager->SetSceneNum(SCE_TITLE);
+	}
 	player->Update();
 }
 
@@ -74,9 +77,9 @@ void MainGameScene::Draw() {
 
 	DrawCircle(mousePos.x, mousePos.y, 5, GetColor(255, 0, 255), true);
 
-	DrawCircle(lerpFloat(100, 1000, timeRate), 10, 10, GetColor(255, 0, 255), true);
+	DrawCircle(lerpFloat(80, 600, timeRate), 10, 10, GetColor(255, 0, 255), true);
 
-	_objects->circle->Draw();
+	//_objects->circle->Draw();
 	_objects->flower->Draw();
 	_objects->enemyManager->Draw();
 

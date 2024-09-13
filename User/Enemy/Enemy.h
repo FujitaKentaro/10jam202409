@@ -10,7 +10,7 @@ public:
 	~Enemy();
 	void Initialize();
 	void Update(bool isStart);
-	void Draw();
+	void Draw(int graphHandle);
 	Vec2 GetPos() { return pos; };
 	int GetRadius() { return radius; };
 	bool IsOverLimit() { return isOverLimiit; };
@@ -43,7 +43,9 @@ public:
 	bool ColiderUpdate(Vec2 pos, float radius);
 	bool OverLimit();
 	void SetFlower(Flower* flower) { flower_ = flower; };
+	void SetGraphHandle(int graphHandle) { eneGraph = graphHandle; };
 private:
 	Flower* flower_ = nullptr;
+	int eneGraph;
 };
 
