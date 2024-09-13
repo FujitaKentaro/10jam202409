@@ -13,6 +13,8 @@ MainGameScene::~MainGameScene() {
 }
 
 void MainGameScene::Initialize() {
+	StopMusic();
+	
 	player= std::make_unique<Player>();
 	player->WinSize(_objects->GetWindowSize());
 	player->Initialize();
@@ -32,6 +34,7 @@ void MainGameScene::Update() {
 	mousePos.y = (float)y;
 	if (isGameStart == false) {
 		if ((GetMouseInput() & MOUSE_INPUT_RIGHT) != 0) {
+			PlayMusic(L"Resources/mp3/game02.mp3", DX_PLAYTYPE_LOOP);
 			isGameStart = true;
 			_objects->circle->Initialize(Vec2(600, 600), 20);
 		}
