@@ -1,6 +1,8 @@
 #include "Enemy.h"
 #include <random>
 #include "Circle.h"
+#include "Player.h"
+#include "Flower.h"
 
 Enemy::Enemy()
 {
@@ -12,7 +14,7 @@ Enemy::~Enemy()
 
 void Enemy::Initialize()
 {
-	pos.x = RandomFloat(0,200,1080);
+	pos.x = RandomFloat(0, 200, 1080);
 	pos.y = 20;
 	radius = 0;
 	accel = 0;
@@ -20,17 +22,18 @@ void Enemy::Initialize()
 	isDead = false;
 	isfall = false;
 	isHit = false;
+	isOverLimiit = false;
 }
 
 void Enemy::Update(bool isStart)
 {
-	float posres;
-	posres = pos.y;
+	float posresult;
+	posresult = pos.y;
 	if (isStart) {}
 
 	if (isfall) {
 		accel += 0.005f;
-		posres += speed * accel;
+		posresult += speed * accel;
 	}
 	else {
 		radius++;
@@ -39,19 +42,25 @@ void Enemy::Update(bool isStart)
 	if (radius >= 25) {
 		isfall = true;
 	}
-	if (pos.y >= 650) {
-		isDead = true;
-	}
 	if (isHit) {
 		color = GetColor(100, 0, 0);
 		accel -= 0.25;
-		posres += speed * accel;
+		posresult += speed * accel;
 		radius--;
 	}
 	else {
 		color = GetColor(100, 200, 100);
 	}
-	 pos.y = posres;
+	if (pos.y >= FALL_LIMIT) {
+		isOverLimiit = true;
+	}
+	if (isOverLimiit) {
+		radius--;
+	}
+	if (radius <= 0) {
+		isDead = true;
+	}
+	pos.y = posresult;
 }
 
 
@@ -99,20 +108,51 @@ void EnemyManager::AllClear()
 	enemy.clear();
 }
 
-void EnemyManager::ColiderUpdate(Circle* circle)
+//void EnemyManager::ColiderUpdate(Circle* circle)
+//{
+//	for (std::unique_ptr<Enemy>& enemys : enemy)
+//	{
+//		enemys->Draw();
+//		float dist = sqrtf(float(
+//			pow(enemys->GetPos().x - circle->GetPos().x, 2) +
+//			pow(enemys->GetPos().y - circle->GetPos().y, 2)
+//			));
+//
+//		if (dist < circle->GetRadius() + enemys->GetRadius() && enemys->isHit == false)
+//		{
+//			circle->Hit();
+//			enemys->isHit = true;
+//		}
+//	}
+//}
+
+bool EnemyManager::ColiderUpdate(Vec2 pos, float radius)
 {
 	for (std::unique_ptr<Enemy>& enemys : enemy)
 	{
 		enemys->Draw();
 		float dist = sqrtf(float(
-			pow(enemys->GetPos().x - circle->GetPos().x, 2) +
-			pow(enemys->GetPos().y - circle->GetPos().y, 2)
+			pow(enemys->GetPos().x - pos.x, 2) +
+			pow(enemys->GetPos().y - pos.y, 2)
 			));
 
-		if (dist < circle->GetRadius() + enemys->GetRadius() && enemys->isHit == false)
+		if (dist < radius + enemys->GetRadius() && enemys->isHit == false)
 		{
-			circle->Hit();
 			enemys->isHit = true;
+			return true;
 		}
 	}
+	return false;
+}
+
+bool EnemyManager::OverLimit()
+{
+	for (std::unique_ptr<Enemy>& enemys : enemy)
+	{
+		if (enemys->IsOverLimit() == true && enemys->isDead == false) {
+			enemys->isDead = true;
+			return true;
+		}
+	}
+	return false;
 }

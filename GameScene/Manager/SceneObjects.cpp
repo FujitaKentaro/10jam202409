@@ -14,11 +14,14 @@ SceneObjects::~SceneObjects() {
 
 void SceneObjects::Initialize() {
 
-	player = std::make_unique<Circle>();
-	player->Initialize(Vec2(600, 600), 20);
+	circle = std::make_unique<Circle>();
+	circle->Initialize(Vec2(600, 600), 20);
 
 	enemyManager = std::make_unique<EnemyManager>();
 	enemyManager->Initialize();
+
+	flower = std::make_unique<Flower>();
+	flower->Initialize();
 
 }
 

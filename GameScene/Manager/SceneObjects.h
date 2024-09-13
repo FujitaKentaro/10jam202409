@@ -9,6 +9,7 @@
 
 #include "Circle.h"
 #include "Enemy.h"
+#include "Flower.h"
 #include "Particle/ParticleManager.h"
 
 typedef struct Shake {
@@ -66,7 +67,8 @@ private: // UI用
 public: // オブジェクトの管理
 
 	std::unique_ptr<EnemyManager> enemyManager;
-	std::unique_ptr<Circle> player;
+	std::unique_ptr<Circle> circle;
+	std::unique_ptr<Flower> flower;
 
 private: // ライト用
 

@@ -108,6 +108,15 @@
     <ClCompile Include="User\Player\Player.cpp">
       <Filter>ソース ファイル\user\player</Filter>
     </ClCompile>
+    <ClCompile Include="GameScene\Particle\ParticleManager.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="User\Flower.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="User\Enemy\Ship.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="User\Circle.h">
@@ -163,6 +172,15 @@
     </ClInclude>
     <ClInclude Include="User\Player\Player.h">
       <Filter>ヘッダー ファイル\user\player</Filter>
+    </ClInclude>
+    <ClInclude Include="GameScene\Particle\ParticleManager.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="User\Flower.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="User\Enemy\Ship.h">
+      <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

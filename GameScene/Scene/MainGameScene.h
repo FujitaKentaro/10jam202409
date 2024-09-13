@@ -36,7 +36,7 @@ private:
 	Vec2 mousePos;
 
 	int enemyPopTimer = 0;
-	const int MAX_TIME = 700;
+	const int MAX_TIME = 1200;
 	int timer;
 	float timeRate;
 
