@@ -63,6 +63,10 @@ void Player::Update()
 
 void Player::Draw()
 {
+	if (bulletResetPos.y < bulletPos.y) {
+		DrawLineAA(bulletResetPos.x - 10, bulletResetPos.y, bulletPos.x, bulletPos.y, GetColor(255, 255, 255));
+		DrawLineAA(bulletResetPos.x + 10, bulletResetPos.y, bulletPos.x, bulletPos.y, GetColor(255, 255, 255));
+	}
 	DrawCircle(bulletPos.x, bulletPos.y, bulletRadius, GetColor(255, 255, 255));
 }
 
