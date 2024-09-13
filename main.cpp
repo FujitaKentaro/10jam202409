@@ -7,6 +7,12 @@
 std::wstring TITLE = L"TITLE";
 
 // ウィンドウ横幅
+//const int WIN_WIDTH = 640;
+
+// ウィンドウ縦幅
+//const int WIN_HEIGHT = 880;
+
+// ウィンドウ横幅
 const int WIN_WIDTH = 1280;
 
 // ウィンドウ縦幅
