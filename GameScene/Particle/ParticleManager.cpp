@@ -29,7 +29,10 @@ void ParticleManager::SetAnyExp(const Vec2& pos, Vec2 velocityMinMax, size_t vol
 			pos, {
 				RandomFloat(0,min, max),
 				RandomFloat(0,min, max) },
-				lifetime, scale, color
+				lifetime, scale,
+				((int)RandomFloat(0, 0, 255),
+				(int)RandomFloat(0, 0, 255),
+				(int)RandomFloat(0, 0, 255))
 				));
 		// 出力
 		Particles_.push_back(std::move(newParticle));

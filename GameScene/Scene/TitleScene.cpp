@@ -18,7 +18,7 @@ void TitleScene::Initialize() {
 void TitleScene::Update() {
 	
 	if ((GetMouseInput() & MOUSE_INPUT_RIGHT) != 0) {
-
+		_objects->enemyManager->AllClear();
 		_manager->SetSceneNum(SCE_SELECT);
 	}
 }

@@ -73,8 +73,6 @@ void MainGameScene::Update() {
 
 void MainGameScene::Draw() {
 
-	DrawFormatString(200, 60, GetColor(255, 255, 255), L"game");
-
 	DrawCircle(mousePos.x, mousePos.y, 5, GetColor(255, 0, 255), true);
 
 	DrawCircle(lerpFloat(80, 600, timeRate), 10, 10, GetColor(255, 0, 255), true);
@@ -87,7 +85,7 @@ void MainGameScene::Draw() {
 		DrawFormatString(30, 30, GetColor(255, 255, 255), L"CLICK MOUSE RIGHT START");
 	}
 	if (isGameStart == true && isGameEnd == false) {
-		DrawFormatString(30, 30, GetColor(255, 255, 255), L"PUSH  A D  MOVE");
+		//DrawFormatString(30, 30, GetColor(255, 255, 255), L"PUSH  A D  MOVE");
 	}
 	player->Draw();
 

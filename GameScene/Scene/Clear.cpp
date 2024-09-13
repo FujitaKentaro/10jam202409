@@ -50,7 +50,7 @@ void Clear::Update() {
 void Clear::Draw() {
 	ParticleManager::GetInstance()->Draw();
 
-	DrawFormatString(200, 60, GetColor(255, 255, 255), L"clear");
-	DrawFormatString(200, 90, GetColor(255, 255, 255), L"CLICK MOUSE RIGHT TO TITLE");
+	DrawFormatString(250, 300, GetColor(255, 255, 255), L"clear");
+	DrawFormatString(200, 600, GetColor(255, 255, 255), L"CLICK MOUSE RIGHT TO TITLE");
 	DrawFormatString((_objects->GetWindowSize().x / 2) - 100, _objects->GetWindowSize().y / 2, GetColor(255, 255, 255), L"SCORE : %d", previewScore);
 }
