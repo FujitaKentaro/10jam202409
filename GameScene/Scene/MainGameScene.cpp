@@ -73,7 +73,7 @@ void MainGameScene::Draw() {
 
 	DrawCircle(lerpFloat(100, 1000, timeRate), 10, 10, GetColor(255, 0, 255), true);
 
-	_objects->circle->Draw();
+	//_objects->circle->Draw();
 	_objects->flower->Draw();
 	_objects->enemyManager->Draw();
 

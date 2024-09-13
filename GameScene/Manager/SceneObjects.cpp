@@ -14,15 +14,24 @@ SceneObjects::~SceneObjects() {
 
 void SceneObjects::Initialize() {
 
+	enemyGraph = LoadGraph(L"Resources/PIC/enemy.png");
+	wallGraph = LoadGraph(L"Resources/PIC/sky_2.png");
+	flowerGraph[0] = LoadGraph(L"Resources/PIC/flower.png");
+	flowerGraph[1] = LoadGraph(L"Resources/PIC/flower_red.png");
+	flowerGraph[2] = LoadGraph(L"Resources/PIC/flower_pink.png");
+	flowerGraph[3] = LoadGraph(L"Resources/PIC/flower_white.png");
+
+
 	circle = std::make_unique<Circle>();
 	circle->Initialize(Vec2(600, 600), 20);
 
 	enemyManager = std::make_unique<EnemyManager>();
 	enemyManager->Initialize();
+	enemyManager->SetGraphHandle(enemyGraph);
 
 	flower = std::make_unique<Flower>();
 	flower->Initialize();
-
+	flower->SetHandle(flowerGraph);
 }
 
 void SceneObjects::UpdateImGui()

@@ -39,6 +39,8 @@ void GameScene::Update()
 
 void GameScene::Draw()
 {
+	DrawGraph(0, 0, sceneObjects->wallGraph, false);
+
 	sceneManager->SceneDraw();
 
 }
