@@ -18,6 +18,7 @@ void SelectScene::Initialize() {
 
 void SelectScene::Update() {
 	if (CheckHitKey(KEY_INPUT_SPACE)) {
+		StopMusic();
 		_manager->SetSceneNum(SCE_GAME1);
 		_objects->flower->Reset();
 	}
