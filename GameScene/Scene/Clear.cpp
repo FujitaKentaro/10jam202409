@@ -12,12 +12,15 @@ Clear::~Clear() {
 }
 
 void Clear::Initialize() {
-
+	StopMusic();
+	PlayMusic(L"Resources/mp3/result01.mp3", DX_PLAYTYPE_LOOP);
 }
 
 void Clear::Update() {
+
 	if ((GetMouseInput() & MOUSE_INPUT_RIGHT) != 0) {
 		_manager->SetSceneNum(SCE_TITLE);
+
 	}
 	if (scoretimer >= SCORE_MAX_TIME) {
 		scoretimer = SCORE_MAX_TIME;

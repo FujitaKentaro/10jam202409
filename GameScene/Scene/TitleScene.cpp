@@ -11,11 +11,14 @@ TitleScene::~TitleScene() {
 }
 
 void TitleScene::Initialize() {
-
+	StopMusic();
+	PlayMusic(L"Resources/mp3/title03.mp3", DX_PLAYTYPE_LOOP);
 }
 
 void TitleScene::Update() {
+	
 	if ((GetMouseInput() & MOUSE_INPUT_RIGHT) != 0) {
+
 		_manager->SetSceneNum(SCE_SELECT);
 	}
 }
