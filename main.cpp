@@ -32,9 +32,10 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,LPSTR lpCmdLine,
 	SetWindowSizeChangeEnableFlag(FALSE, FALSE);
 
 	// タイトルを変更
-	SetMainWindowText(L"TITLE");
+	SetMainWindowText("4025_P花の警備　");
 
 	// 画面サイズの最大サイズ、カラービット数を設定(モニターの解像度に合わせる)
+
 	SetGraphMode(WIN_WIDTH, WIN_HEIGHT, 32);
 
 	// 画面サイズを設定(解像度との比率で設定)

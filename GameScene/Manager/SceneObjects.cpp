@@ -14,15 +14,15 @@ SceneObjects::~SceneObjects() {
 
 void SceneObjects::Initialize() {
 
-	title = LoadGraph(L"Resources/PIC/title.png");
-	tutiGraph = LoadGraph(L"Resources/PIC/tuti.png");
-	enemyGraph = LoadGraph(L"Resources/PIC/enemy.png");
-	wallGraph = LoadGraph(L"Resources/PIC/sky_2.png");
-	flowerGraph[0] = LoadGraph(L"Resources/PIC/flower.png");
-	flowerGraph[1] = LoadGraph(L"Resources/PIC/flower_red.png");
-	flowerGraph[2] = LoadGraph(L"Resources/PIC/flower_pink.png");
-	flowerGraph[3] = LoadGraph(L"Resources/PIC/flower_white.png");
-	info = LoadGraph(L"Resources/PIC/info.png");
+	title = LoadGraph("Resources/PIC/title.png");
+	tutiGraph = LoadGraph("Resources/PIC/tuti.png");
+	enemyGraph = LoadGraph("Resources/PIC/enemy.png");
+	wallGraph = LoadGraph("Resources/PIC/sky_2.png");
+	flowerGraph[0] = LoadGraph("Resources/PIC/flower.png");
+	flowerGraph[1] = LoadGraph("Resources/PIC/flower_red.png");
+	flowerGraph[2] = LoadGraph("Resources/PIC/flower_pink.png");
+	flowerGraph[3] = LoadGraph("Resources/PIC/flower_white.png");
+	info = LoadGraph("Resources/PIC/info.png");
 
 
 	circle = std::make_unique<Circle>();

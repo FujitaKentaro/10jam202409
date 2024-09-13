@@ -22,8 +22,8 @@ void Flower::Update()
 
 void Flower::Draw()
 {
-	DrawFormatString(30, 60, GetColor(255, 255, 255), L"LIFE : %d", life);
-	DrawFormatString(30, 90, GetColor(255, 255, 255), L"SCORE : %d", score);
+	DrawFormatString(30, 60, GetColor(255, 255, 255), "LIFE : %d", life);
+	DrawFormatString(30, 90, GetColor(255, 255, 255), "SCORE : %d", score);
 	int addX = 120;
 	int addPosX = 0;
 	for (int i = 0; i < life; i++) {

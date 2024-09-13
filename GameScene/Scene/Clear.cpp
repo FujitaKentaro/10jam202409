@@ -13,7 +13,7 @@ Clear::~Clear() {
 
 void Clear::Initialize() {
 	StopMusic();
-	PlayMusic(L"Resources/mp3/result01.mp3", DX_PLAYTYPE_LOOP);
+	PlayMusic("Resources/mp3/result01.mp3", DX_PLAYTYPE_LOOP);
 }
 
 void Clear::Update() {
@@ -50,7 +50,7 @@ void Clear::Update() {
 void Clear::Draw() {
 	ParticleManager::GetInstance()->Draw();
 
-	DrawFormatString(250, 300, GetColor(255, 255, 255), L"clear");
-	DrawFormatString(200, 600, GetColor(255, 255, 255), L"CLICK MOUSE RIGHT TO TITLE");
-	DrawFormatString((_objects->GetWindowSize().x / 2) - 100, _objects->GetWindowSize().y / 2, GetColor(255, 255, 255), L"SCORE : %d", previewScore);
+	DrawFormatString(250, 300, GetColor(255, 255, 255), "clear");
+	DrawFormatString(200, 600, GetColor(255, 255, 255), "CLICK MOUSE RIGHT TO TITLE");
+	DrawFormatString((_objects->GetWindowSize().x / 2) - 100, _objects->GetWindowSize().y / 2, GetColor(255, 255, 255), "SCORE : %d", previewScore);
 }

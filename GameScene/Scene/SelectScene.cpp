@@ -27,7 +27,7 @@ void SelectScene::Update() {
 void SelectScene::Draw() {
 	//DrawFormatString(200, 60, GetColor(255, 255, 255),L"serect");
 	DrawGraph(0, 0, _objects->info, false);
-	DrawFormatString(250, 790, GetColor(255, 255, 255), L"PRESS SPACE");
+	DrawFormatString(250, 790, GetColor(255, 255, 255), "PRESS SPACE");
 	
 }
 
