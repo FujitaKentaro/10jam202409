@@ -14,7 +14,9 @@ MainGameScene::~MainGameScene() {
 
 void MainGameScene::Initialize() {
 	player= std::make_unique<Player>();
+	player->WinSize(_objects->GetWindowSize());
 	player->Initialize();
+
 	timer = 0;
 	isGameStart = false;
 	isGameEnd = false;
