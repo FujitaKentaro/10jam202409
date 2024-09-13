@@ -59,7 +59,7 @@ void MainGameScene::Update() {
 		//_objects->circle->Update(isGameStart);
 		//_objects->enemyManager->ColiderUpdate(_objects->circle.get());
 		_objects->enemyManager->Update(isGameStart);
-		_objects->flower->AddScore(_objects->enemyManager->ColiderUpdate(player->BulletPos(), 10));
+		_objects->flower->AddScore(_objects->enemyManager->ColiderUpdate(player->BulletPos(), 15));
 		_objects->flower->HerasuLife(_objects->enemyManager->OverLimit());
 	}
 	if (isGameStart == false && isGameEnd == true) {
