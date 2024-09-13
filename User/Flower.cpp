@@ -24,12 +24,12 @@ void Flower::Draw()
 {
 	DrawFormatString(30, 60, GetColor(255, 255, 255), L"LIFE : %d", life);
 	DrawFormatString(30, 90, GetColor(255, 255, 255), L"SCORE : %d", score);
-	int addX = 70;
+	int addX = 120;
 	int addPosX = 0;
 	for (int i = 0; i < life; i++) {
 		//DrawCircle((640 / 3) + addPosX, 700, 20, GetColor(255, 0, 128));
 
-		DrawGraph((640 / 3) + addPosX, 700, graphHandle[i], true);
+		DrawExtendGraph((640 / 5) + addPosX, 700,(640 / 5) + addPosX+(2*32), 700+(2*64), graphHandle[i], true);
 		addPosX += addX;
 	}
 }

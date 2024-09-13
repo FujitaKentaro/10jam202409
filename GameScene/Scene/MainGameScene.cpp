@@ -78,6 +78,7 @@ void MainGameScene::Draw() {
 	DrawCircle(lerpFloat(80, 600, timeRate), 10, 10, GetColor(255, 0, 255), true);
 
 	//_objects->circle->Draw();
+	DrawGraph(0, 720, _objects->tutiGraph, true);
 	_objects->flower->Draw();
 	_objects->enemyManager->Draw();
 

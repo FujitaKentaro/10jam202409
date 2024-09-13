@@ -74,6 +74,7 @@ public:
 	int enemyGraph;
 	int flowerGraph[4];
 	int wallGraph;
+	int tutiGraph;
 
 
 private: // ライト用

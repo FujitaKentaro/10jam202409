@@ -14,6 +14,7 @@ SceneObjects::~SceneObjects() {
 
 void SceneObjects::Initialize() {
 
+	tutiGraph = LoadGraph(L"Resources/PIC/tuti.png");
 	enemyGraph = LoadGraph(L"Resources/PIC/enemy.png");
 	wallGraph = LoadGraph(L"Resources/PIC/sky_2.png");
 	flowerGraph[0] = LoadGraph(L"Resources/PIC/flower.png");
