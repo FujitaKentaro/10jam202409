@@ -83,7 +83,7 @@ void MainGameScene::Draw() {
 	_objects->enemyManager->Draw();
 
 	if (isGameStart == false) {
-		DrawFormatString(30, 30, GetColor(255, 255, 255), L"CLICK MOUSE RIGHT START");
+		DrawFormatString(200, 500, GetColor(255, 255, 255), L"CLICK MOUSE RIGHT START");
 	}
 	if (isGameStart == true && isGameEnd == false) {
 		//DrawFormatString(30, 30, GetColor(255, 255, 255), L"PUSH  A D  MOVE");

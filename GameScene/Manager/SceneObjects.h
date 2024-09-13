@@ -75,6 +75,8 @@ public:
 	int flowerGraph[4];
 	int wallGraph;
 	int tutiGraph;
+	int title;
+	int info;
 
 
 private: // ライト用

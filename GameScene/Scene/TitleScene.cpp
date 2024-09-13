@@ -16,7 +16,7 @@ void TitleScene::Initialize() {
 }
 
 void TitleScene::Update() {
-	
+
 	if ((GetMouseInput() & MOUSE_INPUT_RIGHT) != 0) {
 		_objects->enemyManager->AllClear();
 		_manager->SetSceneNum(SCE_SELECT);
@@ -24,8 +24,10 @@ void TitleScene::Update() {
 }
 
 void TitleScene::Draw() {
-	DrawFormatString(200, 60, GetColor(255, 255, 255), L"TITLE");
-	DrawFormatString(200, 90, GetColor(255, 255, 255), L"CLICK MOUSE RIGHT");
+	//DrawFormatString(200, 60, GetColor(255, 255, 255), L"TITLE");
+	DrawFormatString(250, 500, GetColor(255, 255, 255), L"CLICK MOUSE RIGHT");
+
+	DrawExtendGraph(50 + (0), 200 +(0), 50 + (719 * 0.8), 200 +(232*0.8), _objects->title, true);
 }
 
 
